@@ -57,7 +57,7 @@ GROUP BY DepartmentId;
 USE Organisation;
 SELECT Name, Salary
 FROM Employees
-WHERE Salary > (SELECT AVG(Sфlary) FROM Employees);
+WHERE Salary > (SELECT AVG(Salary) FROM Employees);
 </pre>
 
 3.  <b>Все подразделения и первое наиболее часто встречающееся имя сотрудника в каждом подразделении, количество сотрудников с таким именем в подразделении.  </b>
