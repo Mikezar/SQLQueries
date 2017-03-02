@@ -23,8 +23,8 @@
 
 <h2>Решение</h2>
 
-Схема:
-<code>
+<b>Схема:</b>
+<pre>
 CREATE TABLE [dbo].Employees (
 [Id] INT NOT NULL IDENTITY (1,1),
 [DepartmentId] INT NOT NULL,
@@ -43,7 +43,7 @@ INSERT INTO Employees (DepartmentId, Name, Salary)VALUES
 ('1', 'Mike Vazovskiy', '25000'),('2', 'John Karter', '25000'),
 ('3', 'Sarah Connor', '70000'), ('1', 'Alfreds Futterkiste', '45000'),
 ('3', 'Antonio Moreno', '25000'), ('2', 'Christina Berglund', '57000')
-</code>
+</pre>
 
 1.
 <code>
