@@ -54,6 +54,7 @@ GROUP BY DepartmentId;
 
 2. <b>Имена сотрудников и их зарплата, при этом зарплата таких сотрудников должна быть выше средней зарплаты по всей организации. </b>
 <pre>
+USE Organisation;
 SELECT DepartmentId, Name, COUNT(Name) FROM Employees
 WHERE Name IN (SELECT TOP (1) Name FROM Employees Group By Name Having COUNT(*) > 0 order by COUNT(Name) desc)
 Group By DepartmentId, Name
