@@ -48,7 +48,6 @@ INSERT INTO Employees (DepartmentId, Name, Salary)VALUES
 1. <b>Количество сотрудников по каждому подразделению организации. </b>
 <pre>
 USE Organisation;
-
 SELECT DepartmentId As 'Номер отдела', COUNT(Name) As 'Количество сотрудников' FROM dbo.Employees
 GROUP BY DepartmentId;
 </pre>
