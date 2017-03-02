@@ -45,24 +45,24 @@ INSERT INTO Employees (DepartmentId, Name, Salary)VALUES
 ('3', 'Antonio Moreno', '25000'), ('2', 'Christina Berglund', '57000')
 </pre>
 
-1.
-<code>
+1. <b>Количество сотрудников по каждому подразделению организации. </b>
+<pre>
 USE Organisation;
 
 SELECT DepartmentId As 'Номер отдела', COUNT(Name) As 'Количество сотрудников' FROM dbo.Employees
 GROUP BY DepartmentId;
-</code>
+</pre>
 
-2.
-<code>
+2. <b>Имена сотрудников и их зарплата, при этом зарплата таких сотрудников должна быть выше средней зарплаты по всей организации. </b>
+<pre>
 SELECT DepartmentId, Name, COUNT(Name) FROM Employees
 WHERE Name IN (SELECT TOP (1) Name FROM Employees Group By Name Having COUNT(*) > 0 order by COUNT(Name) desc)
 Group By DepartmentId, Name
 Order by DepartmentId, Name desc
-</code>
+</pre>
 
-3. 
-<code>
+3.  <b>Все подразделения и первое наиболее часто встречающееся имя сотрудника в каждом подразделении, количество сотрудников с таким именем в подразделении.  </b>
+<pre>
 USE Organisation;
 SELECT DepartmentId, Name, COUNT(Name)
 FROM Employees em
@@ -72,4 +72,4 @@ HAVING Count(Name) = (SELECT TOP (1) MAX(cnt) FROM
         FROM Employees 
         GROUP BY DepartmentId, Name) as e where e.DepartmentId = em.DepartmentId)
 ORDER BY 1,2
-</code>
+</pre>
